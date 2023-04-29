@@ -19,7 +19,19 @@ git status
 git add . (for adding all files)
 git add filename1 filename2
 
+4. commit the file for github
+ git commit -m "write git command"
+
+ 5. pull update from other developer 
+ git pull origin main
+
+ 6. push code for github
+ git push origin main
+
+
 # github desktop
+go to the github.com portal and lunch github desktop for cloning repository
+set path of system where we want to keep source code in system folder 
 
 
 #HTML
