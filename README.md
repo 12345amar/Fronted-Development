@@ -1,4 +1,21 @@
-# github portal
+# Flex Box
+1. flexible layout
+2. simple way to creating responsive webpage/layout
+3. direction for items in container
+4. ordering for items in container
+5. align items in container
+6. spacing between items in container
+7. justify items in container
+8. resource => https://flexbox.help/
+
+# VS Code Extension (It's super power for developer)
+1. html css support
+2. emmet
+3. vs-code icon
+4. gitlens
+5. bootstrap
+
+# github portal/bitbucket
 1. manage the source code
 2. multiple developer can work at a time on a same project
 3. developer can rollback code if anyone commit wrong/incorrect code
