@@ -85,6 +85,85 @@
     2. An array
     3. A date
 
+# Types of JavaScript Operators
+There are different types of JavaScript operators:
+
+1. Arithmetic Operators
+2. Assignment Operators
+3. Comparison Operators
+4. String Operators
+5. Logical Operators
+6. Bitwise Operators
+7. Ternary Operators
+8. Type Operators
+
+# Conditions & Statements
+1. If else conditionals  
+2. If else ladder  
+3. Switch case  
+4. Ternary Operator  
+# Looping
+1. For Loops  
+    a. for (Use for array)
+    for (let i = 0; i < 10; i++) {
+        console.log(i)
+    }
+    output=> 0 1 2 3 4 5 6 7 8 9
+
+    b. for in (Use for object)
+    const myObj = {fname: "amar", lname : "singh", city: "noida"}
+    for (key in myObj) {
+        console.log("my key: " + key)
+        console.log(myObj[key])
+    }
+    c. for of (Use for array)
+    const myArray = ['amar', 'singh', 'noida']
+    for (value of myArray) {
+        console.log("my value: " + value)
+    }
+    d. forEach()
+
+   const myArray = ['amar', 'singh', 'noida']
+   const outPut = myArray.forEach((index, value) => {
+    console.log(index, value)
+    return value
+   })
+   console.log(outPut)
+2. While Loop
+    a. while
+    b. do while
+
+# Function 
+set of code inside a block and it returns some output
+
+1. Normal function 
+function myFunc() {
+
+}
+2. Arrow function
+const myArrowFunc = () => {}
+
+1. Function Statement
+2. Funciton Expression
+3. Function Declaration
+4. Anonymous Function
+5. Named Function
+6. Difference between parameters & arguments
+7. First Class function
+8. Difference between Regular function & Arrow function
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
