@@ -136,21 +136,246 @@ There are different types of JavaScript operators:
 # Function 
 set of code inside a block and it returns some output
 
-1. Normal function 
-function myFunc() {
-
+1. Normal function (2015) 
+function myFunc(a, b) {
+    return a + b
 }
-2. Arrow function
-const myArrowFunc = () => {}
+2. Arrow function (ES6)
+const myArrowFunc = (a, b) => a + b
 
+# concepts of javascript functions
 1. Function Statement
+ function myFunc() {
+
+ }
+ 
+
 2. Funciton Expression
+ const myFunc = function() {
+
+ }
+
+
 3. Function Declaration
+const myFunc = function() {
+
+ }
+
+
 4. Anonymous Function
+    setTimeout(() => {}, 100)
+    function(){ 
+
+    }
 5. Named Function
+ function myFunc(){
+        
+    }
 6. Difference between parameters & arguments
+   function myFunc(a, b){ => parameters
+        console.log(a, b)
+    }
+
+    myFunc(2, 4) => arguments
+
+
+    function myFunc() {
+        console.log("function statement")
+    }
+
+    const myFuncEx = function(){
+        console.log("function expression")
+    }
+
+    console.log(myFunc())
+    console.log(myFuncEx())
+
+
+
 7. First Class function
+    a. when we pass a function as parameter is call First Class function
+    example=>
+    function myFirst() {
+        console.log("my first")
+    }
+     function myFun(myFirst) {
+        return myFirst()
+    }
+    b. when we return a function inside a function
+        function myFun() {
+            return function myFirst() {
+                console.log("my first")
+            }
+        }
+
+    c. when we assign a function to variable, object and array
+        
+        // variable
+        const myFunc = function myFirst() {
+                console.log("my first")
+            }
+            myFunc()
+
+        // Object
+
+            const myObj = {
+                name: "amar",
+                myFunc: function() {
+                console.log("my first")
+                }
+            }
+
+            myObj.myFunc
+
+        // array
+
+        const myArray = [];
+        myArray.push(function myFunc() {
+                console.log("my first")
+        })
+        const myFirst = myArray[0]
+        console.log(myFirst())
+
+
+
+
 8. Difference between Regular function & Arrow function
+
+1. syntax
+2. arguments 
+3. this (binding) => call, apply, bind
+4. new/consturctor
+5. super keyword
+
+
+syntax 
+function myFunction() {
+    return "my return"
+}
+
+console.log(myFunction())
+
+# Arguments 
+function myFunc() {
+    console.log(arguments)
+}
+
+myFunc(2, 4)
+
+const myFunc = () => {
+    console.log(arguments)
+}
+
+myFunc(2, 4)
+
+# this (binding)
+console.log(this)
+
+const myObj = {
+    name: "amar",
+    city: "noida",
+    myFunc: function(){
+        console.log("my name is", this.name)
+    }
+}
+
+const myObj = {
+    name: "amar",
+    city: "noida",
+    myFunc: () => {
+        console.log("my name is", this.name)
+    }
+}
+
+myObj.myFunc()
+
+
+# new/constructor
+
+1. regular function
+function Person(name, age, myFunc) {
+  this.name = name;
+  this.age = age;
+  this.myFunc = myFunc;
+}
+function myFunc() {
+    console.log("Im a function")
+}
+const john = new Person('John', 30, myFunc);
+console.log(john.name); // Output: John
+console.log(john.age); // Output: 30
+console.log(john.myFunc())
+
+2. arrow function
+const Person = (name, age) => {
+  this.name = name;
+  this.age = age;
+  this.myFunc = myFunc;
+}
+
+const john = new Person('John', 30);
+console.log(john.name); // Output: John
+console.log(john.age); // Output: 30
+
+# super
+
+class myFirst {
+    const name = 'John';
+    myFunc() {
+        console.log("I'm parent class")
+    }
+}
+
+class child extends myFirst {
+    console.log(super.name)
+    console.log(super.myFunc())
+}
+
+
+# Array
+
+1. numbers // const myArray = [2, 5, 6]
+2. string // const myArray = ['2', '#', 'ram']
+3. numbers & string (mixed array) // const myArray = [2, '#', 'ram']
+const myArray = [1, 5]
+myArray.push(8) // insert value from last index
+console.log(myArray) // [1,5,8]
+myArray.pop() // delete value from last index
+console.log(myArray) // [1,5]
+delete myArray[0]
+
+// assignment
+ 1. slice,
+ 2. splice
+
+push,pop,delete,isArray,forEach,map,filter,reduce,find,sort,reverse
+
+# Object
+1. object.values
+2. object.entries
+3. object.keys
+4. for in
+
+const  myObj = {name: 'Amar', age: 24, myFunc: ()=>{ "myFunc return"} }
+myObj.myFunc
+
+# string
+length
+charAt
+substring
+replace
+split
+toUpperCase
+toLowerCase
+
+
+
+
+
+
+
+
+
 
 
 
