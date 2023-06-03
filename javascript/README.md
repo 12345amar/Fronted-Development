@@ -331,7 +331,7 @@ class child extends myFirst {
     console.log(super.myFunc())
 }
 
-
+# ======================
 # Array
 
 1. numbers // const myArray = [2, 5, 6]
@@ -367,6 +367,249 @@ replace
 split
 toUpperCase
 toLowerCase
+
+# Date
+const currentDate = new Date()
+    1. getDate() => get current date in number ex: 27
+    2. getTime() => get timestamp of date in numbers
+    3. getFullYear() => get year in number
+
+    4. getMonth() => return month in number but it refers 0 to 11, where 0 will be January and  11 will be december 
+
+    5. getDay() => it retuns number but it refers day ex= (0 => sun, 1 => mon, 2 => tue, 3 => wed, 4 => thu, 5 => fri, 6 => sat) 
+
+    6. getHours() => it returns number in hours
+    7. getMinutes() => it returns number in minutes
+    8. getSeconds() => it returns number in seconds
+    9. getMilliseconds() => it returns number in milliseconds
+
+    manipulate date function
+    1. setDate()
+    2. setTime()
+    3. setHours()
+    4. setMinutes()
+    5. setSeconds()
+    6. setMilliseconds()
+    7. setFullYear()
+    8. setDay()
+    9. setMonth()
+
+
+
+# Math
+    1. PI
+        console.log(Math.PI)
+    2. Math.floor(Math.PI) ==> return actual value before decimal it never increases & decrease 
+        ex 3.65 ===> output = 3
+
+    3. Math.ceil(Math.PI) => return value with addition 1 if decimal value greater then 0
+        ex 3.001 => output = 4
+
+    4. Math.round(Math.PI) => retrun value if decimal value has >= 5 then add 1 in actual value
+     ex 3.56 => output = 4 
+        3.14 => output = 3
+
+    5. Math.abs => it returns absolute value even number will be +, -
+    ex -8 => output = 8
+        +9 => output = 9
+    6. Math.pow(2, 2)
+    7. Math.sqrt(4)
+    8. Math.max(3, 6, 1, 0)
+    9. Math.min(3, 6, 1, 0)
+
+
+        
+
+# Number  
+    we can convert string numner
+
+    const myNumber = '2345234.34546fgsdgsdf'
+    1. number(myNumber) = nan
+    2. max
+    3. min
+    4. abs
+    5. isNan
+
+
+# Boolean  
+true ====> 1
+false ==> 0
+
+
+
+if (true === '1') {
+    console.log("true")
+} else {
+    console.log("false")
+}
+
+# DOM & BOM 
+
+
+
+
+
+
+
+
+# DOM (Document Object Model)
+ 1. DOM Tree Structure 
+ 2. Accessing DOM Elements
+    1. getElementById
+    2. getElmentsByClassname
+    3. getElementByTagName
+    4. querySector()
+    5. querySectorAll()
+
+    
+
+
+ 3. Modifynig DOM Elements
+    1. innerHTML
+    2. innerText
+    3. setAttribute
+    4. style
+    5. classList => add,remove
+    6. textContet
+
+ 4. Responding Event Handlers
+    1. click
+    2. mouseDown
+    3. mouseMove
+    4. mouseUp
+    5. mouseEnter
+    6. mouseLeave
+    7. mouseHover
+    7. scroll
+    5. focus
+    6. blur
+    7. change
+    8. dblclick
+
+Event delegation:
+    
+    capturing
+    const myDivObj = document.getElementById("myDiv")
+    const myPara = document.getElementById("myPara")
+    const myButton = document.getElementById("myButton")
+
+
+    myDivObj.addEventListener("eventName", function(){}, false)
+    myPara.addEventListener("eventName", function(){}, true)
+    myButton.addEventListener("eventName", function(){}, false)
+
+
+    bubbling
+
+    myDivObj.addEventListener("eventName", function(){})
+    myPara.addEventListener("eventName", function(){})
+    myButton.addEventListener("eventName", function(){})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# BOM
+1. window.document
+2. window.location: Provides information about the current URL and allows you to navigate to a new URL.
+    a. window.location.href
+    b. window.location.host
+    c. window.location.pathname
+    d. window.location.search
+    e. window.location.reload()
+
+3. window.history: Allows you to manipulate the browser's history (back, forward, and navigation).
+    a. history.back()
+    b. history.forward()
+    c. history.go(-2)
+    d. history.go(3)
+    e. history.replaceState({}, '', '/new-url')
+    f. history.pushState({}, '', '/another-url')
+4. window.navigator => Provides information about the user's browser and operating system.
+    a. navigator.userAgent
+    b. navigator.appName
+    c. navigator.appVersion
+    d. navigator.platform
+    e. navigator.cookieEnabled
+    f. navigator.javaEnabled()
+    g. navigator.onLine
+    h. navigator.plugins
+    i. navigator.geolocation.getCurrentPosition(function(position) {
+        console.log('Latitude:', position.coords.latitude);
+        console.log('Longitude:', position.coords.longitude);
+        });
+    j. navigator.language
+    k. navigator.userLanguage
+    l. window.navigator.userAgentData
+    m. navigator.getBattery
+    navigator.getBattery().then(function(battery) {
+        console.log('Battery Level:', battery.level);
+        console.log('Charging:', battery.charging);
+        console.log('Charging Time:', battery.chargingTime);
+        console.log('Discharging Time:', battery.dischargingTime);
+
+        // Add an event listener to track changes in battery status
+        battery.addEventListener('chargingchange', function() {
+            console.log('Charging status changed:', battery.charging);
+        });
+    });
+    n. navigator.clipboard
+     //writeText
+            window.navigator.clipboard.writeText('Hello, world!').then(function() {
+                console.log('Text copied to clipboard!');
+            }).catch((err) => {
+                console.log("===", err)   
+            })
+    //readText()
+            window.navigator.clipboard.readText().then(function(text) {
+                console.log('Text from clipboard:', text);
+            });
+    //write(data)
+            var dataTransfer = new DataTransfer();
+            dataTransfer.setData('text/plain', 'Hello, world!');
+            window.navigator.clipboard.write(dataTransfer).then(function() {
+                console.log('Data copied to clipboard!');
+            });
+    //read()
+            window.navigator.clipboard.read().then(function(dataTransfer) {
+                var text = dataTransfer.getData('text/plain');
+                console.log('Text from clipboard:', text);
+            });
+        
+
+5. window.screen => Provides information about the user's screen and display.
+6. window.innerWidth and window.innerHeight => Returns the inner width and height of the browser window.
+7. window.outerWidth and window.outerHeight => Returns the outer width and height of the browser window including any browser UI elements.
+8. window.localStorage and window.sessionStorage => Allow you to store data locally in the user's browser.
+9. window.alert(), window.confirm(), and window.prompt() => Display dialogs to the user for interaction.
+10. window.setTimeout() and window.setInterval() => Enable scheduling of functions to run after a specified delay or at specified intervals.
+11. window.onresize => An event handler that triggers when the browser window is resized.
+12. window.open() => Opens a new browser window or tab.
+13. window.close() => Closes the current browser window or tab.
+14. window.print() => Opens the print dialog for the current page.
+15. window.scrollTo() => Scrolls the window to a specified position.
+16. window.scrollBy() => Scrolls the window by a specified amount.
+17. window.scrollTo() and window.scrollBy() => Scroll the window to a specified position or by a specified amount.
+ 
+
+
 
 
 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+       #contextMenu {
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+#contextMenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#contextMenu li {
+  cursor: pointer;
+  padding: 5px;
+}
+
+#contextMenu li:hover {
+  background: #f0f0f0;
+}
+    </style>
+</head>
+<body>
+    <div id="myElement">Right-click me!</div>
+
+<!-- Define a custom context menu -->
+<div id="contextMenu" style="display: none;">
+  <ul>
+    <li id="option1">Option 1</li>
+    <li id="option2">Option 2</li>
+  </ul>
+</div>
+</body>
+<script type="text/javascript" src="contextMenu.js"></script>
+</html>
