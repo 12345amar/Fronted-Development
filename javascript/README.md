@@ -39,223 +39,223 @@
     6. real time changes
 
 # install JS engine in our machine (mac/window) Nodejs => v8 
- 1. install nodejs in our machine 
- 2. check nodejs version using `node -v` command
+    1. install nodejs in our machine 
+    2. check nodejs version using `node -v` command
     if nodejs installed it returns v18.19.1 (version of nodejs)
- 3. we can run javacript code using `node` command
- 4. we can run javascript file using `node filename_with_path` 
+    3. we can run javacript code using `node` command
+    4. we can run javascript file using `node filename_with_path` 
 
 # Some js engine in browsers
-1. V8 – Open-source JavaScript Engine developed by Google for Chrome
-2. SpiderMonkey – The JavaScript Engine powering Mozilla Firefox
-3. JavaScriptCore – Open-source JavaScript Engine developed by Apple for Safari
-4. Rhino – Open-source JavaScript Engine managed by Mozilla foundation for FireFox
-5. Chakra – A JavaScript Engine for Microsoft Edge
-6. JerryScript – A JavaScript engine for the Internet of Things (Iot).
+    1. V8 – Open-source JavaScript Engine developed by Google for Chrome
+    2. SpiderMonkey – The JavaScript Engine powering Mozilla Firefox
+    3. JavaScriptCore – Open-source JavaScript Engine developed by Apple for Safari
+    4. Rhino – Open-source JavaScript Engine managed by Mozilla foundation for FireFox
+    5. Chakra – A JavaScript Engine for Microsoft Edge
+    6. JerryScript – A JavaScript engine for the Internet of Things (Iot).
 
 
 # What is variable
 => It's space in a memory. 
 # Type of variable
-1. var (use before 2015)
-2. let (es6)
-3. const (es6)
+    1. var (use before 2015)
+    2. let (es6)
+    3. const (es6)
 
-1. global scope => var
-=> var works globally, it can intialize anywhere and use anywhere
-2. block scope => let const
-=> let & const works only block scope which is inside {} scope
-=> let can reassign value  inside of block but const can not reassign value
-=> when we use object & array we can change and reassign in const object & array value
+    1. global scope => var
+        => var works globally, it can intialize anywhere and use anywhere
+    2. block scope => let const
+        => let & const works only block scope which is inside {} scope
+        => let can reassign value  inside of block but const can not reassign value
+        => when we use object & array we can change and reassign in const object & array value
 
 
 # Data Types (Primitive)
 
-    =>Primitive
-    1. String
-    2. Number
-    3. Bigint
-    4. Boolean
-    5. Undefined
-    6. Null
-    7. Symbol(Assignment)
-    8. Object
-    =>Non-Primitive
-    1. An object
-    2. An array
-    3. A date
+    ==>Primitive
+        1. String
+        2. Number
+        3. Bigint
+        4. Boolean
+        5. Undefined
+        6. Null
+        7. Symbol(Assignment)
+    
+    =>Non-Primitive / Object
+        1. An object
+        2. An array
+        3. A date
 
 # Types of JavaScript Operators
 There are different types of JavaScript operators:
 
-1. Arithmetic Operators
-2. Assignment Operators
-3. Comparison Operators
-4. String Operators
-5. Logical Operators
-6. Bitwise Operators
-7. Ternary Operators
-8. Type Operators
+    1. Arithmetic Operators
+    2. Assignment Operators
+    3. Comparison Operators
+    4. String Operators
+    5. Logical Operators
+    6. Bitwise Operators
+    7. Ternary Operators
+    8. Type Operators
 
 # Conditions & Statements
-1. If else conditionals  
-2. If else ladder  
-3. Switch case  
-4. Ternary Operator  
+    1. If else conditionals  
+    2. If else ladder  
+    3. Switch case  
+    4. Ternary Operator  
 # Looping
-1. For Loops  
-    a. for (Use for array)
-    for (let i = 0; i < 10; i++) {
-        console.log(i)
-    }
-    output=> 0 1 2 3 4 5 6 7 8 9
+    1. For Loops  
+        a. for (Use for array)
+            for (let i = 0; i < 10; i++) {
+                console.log(i)
+            }
+            output=> 0 1 2 3 4 5 6 7 8 9
 
-    b. for in (Use for object)
-    const myObj = {fname: "amar", lname : "singh", city: "noida"}
-    for (key in myObj) {
-        console.log("my key: " + key)
-        console.log(myObj[key])
-    }
-    c. for of (Use for array)
-    const myArray = ['amar', 'singh', 'noida']
-    for (value of myArray) {
-        console.log("my value: " + value)
-    }
-    d. forEach()
+        b. for in (Use for object)
+            const myObj = {fname: "amar", lname : "singh", city: "noida"}
+            for (key in myObj) {
+                console.log("my key: " + key)
+                console.log(myObj[key])
+            }
+        c. for of (Use for array)
+            const myArray = ['amar', 'singh', 'noida']
+            for (value of myArray) {
+                console.log("my value: " + value)
+            }
+        d. forEach()
 
-   const myArray = ['amar', 'singh', 'noida']
-   const outPut = myArray.forEach((index, value) => {
-    console.log(index, value)
-    return value
-   })
-   console.log(outPut)
-2. While Loop
-    a. while
-    b. do while
+        const myArray = ['amar', 'singh', 'noida']
+        const outPut = myArray.forEach((index, value) => {
+            console.log(index, value)
+            return value
+        })
+        console.log(outPut)
+    2. While Loop
+        a. while
+        b. do while
 
 # Function 
-set of code inside a block and it returns some output
+    set of code inside a block and it returns some output
 
-1. Normal function (2015) 
-function myFunc(a, b) {
-    return a + b
-}
-2. Arrow function (ES6)
-const myArrowFunc = (a, b) => a + b
+    1. Normal function (2015) 
+        function myFunc(a, b) {
+            return a + b
+        }
+    2. Arrow function (ES6)
+        const myArrowFunc = (a, b) => a + b
 
 # concepts of javascript functions
-1. Function Statement
- function myFunc() {
+    1. Function Statement
+        function myFunc() {
 
- }
+        }
  
 
-2. Funciton Expression
- const myFunc = function() {
+    2. Funciton Expression
+        const myFunc = function() {
 
- }
-
-
-3. Function Declaration
-const myFunc = function() {
-
- }
-
-
-4. Anonymous Function
-    setTimeout(() => {}, 100)
-    function(){ 
-
-    }
-5. Named Function
- function myFunc(){
-        
-    }
-6. Difference between parameters & arguments
-   function myFunc(a, b){ => parameters
-        console.log(a, b)
-    }
-
-    myFunc(2, 4) => arguments
-
-
-    function myFunc() {
-        console.log("function statement")
-    }
-
-    const myFuncEx = function(){
-        console.log("function expression")
-    }
-
-    console.log(myFunc())
-    console.log(myFuncEx())
-
-
-
-7. First Class function
-    a. when we pass a function as parameter is call First Class function
-    example=>
-    function myFirst() {
-        console.log("my first")
-    }
-     function myFun(myFirst) {
-        return myFirst()
-    }
-    b. when we return a function inside a function
-        function myFun() {
-            return function myFirst() {
-                console.log("my first")
-            }
         }
 
-    c. when we assign a function to variable, object and array
-        
-        // variable
-        const myFunc = function myFirst() {
+
+    3. Function Declaration
+        const myFunc = function() {
+
+        }
+
+
+    4. Anonymous Function
+        setTimeout(() => {}, 100)
+        function(){ 
+
+        }
+    5. Named Function
+        function myFunc(){
+            
+        }
+    6. Difference between parameters & arguments
+        function myFunc(a, b){ => parameters
+            console.log(a, b)
+        }
+
+        myFunc(2, 4) => arguments
+
+
+        function myFunc() {
+            console.log("function statement")
+        }
+
+        const myFuncEx = function(){
+            console.log("function expression")
+        }
+
+        console.log(myFunc())
+        console.log(myFuncEx())
+
+
+
+    7. First Class function
+        a. when we pass a function as parameter is call First Class function
+            example=>
+            function myFirst() {
                 console.log("my first")
             }
-            myFunc()
-
-        // Object
-
-            const myObj = {
-                name: "amar",
-                myFunc: function() {
-                console.log("my first")
+            function myFun(myFirst) {
+                return myFirst()
+            }
+        b. when we return a function inside a function
+            function myFun() {
+                return function myFirst() {
+                    console.log("my first")
                 }
             }
 
+        c. when we assign a function to variable, object and array
+        
+            // variable
+            const myFunc = function myFirst() {
+                    console.log("my first")
+                }
+                myFunc()
+
+            // Object
+
+                const myObj = {
+                    name: "amar",
+                    myFunc: function() {
+                    console.log("my first")
+                    }
+                }
+
             myObj.myFunc
 
-        // array
+            // array
 
-        const myArray = [];
-        myArray.push(function myFunc() {
-                console.log("my first")
-        })
-        const myFirst = myArray[0]
-        console.log(myFirst())
-
-
+            const myArray = [];
+            myArray.push(function myFunc() {
+                    console.log("my first")
+            })
+            const myFirst = myArray[0]
+            console.log(myFirst())
 
 
-8. Difference between Regular function & Arrow function
-
-1. syntax
-2. arguments 
-3. this (binding) => call, apply, bind
-4. new/consturctor
-5. super keyword
 
 
-syntax 
+# 8. Difference between Regular function & Arrow function
+
+    1. syntax
+    2. arguments 
+    3. this (binding) => call, apply, bind
+    4. new/consturctor
+    5. super keyword
+
+
+1. syntax 
 function myFunction() {
     return "my return"
 }
 
 console.log(myFunction())
 
-# Arguments 
+2. Arguments 
 function myFunc() {
     console.log(arguments)
 }
@@ -268,7 +268,7 @@ const myFunc = () => {
 
 myFunc(2, 4)
 
-# this (binding)
+3. this (binding)
 console.log(this)
 
 const myObj = {
@@ -290,7 +290,7 @@ const myObj = {
 myObj.myFunc()
 
 
-# new/constructor
+4. new/constructor
 
 1. regular function
 function Person(name, age, myFunc) {
@@ -317,7 +317,7 @@ const john = new Person('John', 30);
 console.log(john.name); // Output: John
 console.log(john.age); // Output: 30
 
-# super
+5. super
 
 class myFirst {
     const name = 'John';
