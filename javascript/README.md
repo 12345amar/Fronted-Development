@@ -19,10 +19,13 @@
     It checks callstack container if container is empty then check callback queue and if it gets any task in callback queue then it assign to call stack.
 
 # examples
- console.log("Starting")
- setTimeout(() => console.log("Second console"), 0);
- Promise.resolve().then(() =>console.log("third console"))
- console.log("ending")
+    console.log("Starting")
+
+    setTimeout(() => console.log("Second console"), 0);
+
+    Promise.resolve().then(() =>console.log("third console"))
+    
+    console.log("ending")
 
 # output==>
  Starting
