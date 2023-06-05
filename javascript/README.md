@@ -620,8 +620,10 @@ const currentDate = new Date()
 
 
 # ES6 Features 2015
-    Arrow Functions
-    Spread Operator => it expends & spreads array into individual elements.
+
+# Arrow Functions (It covered already on above)
+
+# Spread Operator => it expends & spreads array into individual elements.
     1. Array Manipulation
         const array1 = [2, 4, 5]
         const array2 = [6, 3,2]
@@ -659,12 +661,12 @@ const currentDate = new Date()
         const getArrayToString = [...myString]
         console.log(getArrayToString)
 
-    Rest Operator => it converts individual elements into array
+# Rest Operator => it converts individual elements into array
         function myFunc(...params) {
             console.log(params)
         }
 
-    myFunc(1, 4, 6)
+        myFunc(1, 4, 6)
 
 # Promises => 
     1. synchronous =>  it executes code line by line, it waits to complete execution of first line of code then move to second line of code. It never goes other line until it complets execution of first line.
@@ -680,7 +682,7 @@ const currentDate = new Date()
                 }) => {
         })
 
-    * Note: javscript introduce new feature to overcome callback hell. this is Promise
+    *Note: `javscript introduce new feature to overcome callback hell. this is Promise`
 
 
     Promise => it performs asynchronous operation.
