@@ -7,7 +7,7 @@ function checkInternetConnection() {
   }
   
   // Check the initial internet connection status
-  checkInternetConnection();
+  // checkInternetConnection();
   
   // Add event listeners for online and offline events
   window.addEventListener('online', checkInternetConnection);

@@ -116,30 +116,32 @@ There are different types of JavaScript operators:
                 console.log("my key: " + key)
                 console.log(myObj[key])
             }
+
         c. for of (Use for array)
             const myArray = ['amar', 'singh', 'noida']
             for (value of myArray) {
                 console.log("my value: " + value)
             }
-        d. forEach()
 
+        d. forEach()
         const myArray = ['amar', 'singh', 'noida']
         const outPut = myArray.forEach((index, value) => {
             console.log(index, value)
             return value
         })
         console.log(outPut)
+
     2. While Loop
         a. while
         b. do while
 
 # Function 
     set of code inside a block and it returns some output
-
     1. Normal function (2015) 
         function myFunc(a, b) {
             return a + b
         }
+
     2. Arrow function (ES6)
         const myArrowFunc = (a, b) => a + b
 
@@ -248,125 +250,140 @@ There are different types of JavaScript operators:
     5. super keyword
 
 
-1. syntax 
-function myFunction() {
-    return "my return"
-}
+    1. syntax 
+        function myFunction() {
+            return "my return"
+        }
 
-console.log(myFunction())
+        const myFunction = () => {
+            return "my return"
+        }
 
-2. Arguments 
-function myFunc() {
-    console.log(arguments)
-}
+        console.log(myFunction())
 
-myFunc(2, 4)
+        2. Arguments 
+            function myFunc() {
+                console.log(arguments)
+            }
 
-const myFunc = () => {
-    console.log(arguments)
-}
+            myFunc(2, 4)
 
-myFunc(2, 4)
+            const myFunc = () => {
+                console.log(arguments)
+            }
 
-3. this (binding)
-console.log(this)
+            myFunc(2, 4)
 
-const myObj = {
-    name: "amar",
-    city: "noida",
-    myFunc: function(){
-        console.log("my name is", this.name)
-    }
-}
+        3. this (binding)
+            console.log(this)
 
-const myObj = {
-    name: "amar",
-    city: "noida",
-    myFunc: () => {
-        console.log("my name is", this.name)
-    }
-}
+            const myObj = {
+                name: "amar",
+                city: "noida",
+                myFunc: function(){
+                    console.log("my name is", this.name)
+                }
+            }
 
-myObj.myFunc()
+            const myObj = {
+                name: "amar",
+                city: "noida",
+                myFunc: () => {
+                    console.log("my name is", this.name)
+                }
+            }
+
+            myObj.myFunc()
 
 
-4. new/constructor
+        4. new/constructor
 
-1. regular function
-function Person(name, age, myFunc) {
-  this.name = name;
-  this.age = age;
-  this.myFunc = myFunc;
-}
-function myFunc() {
-    console.log("Im a function")
-}
-const john = new Person('John', 30, myFunc);
-console.log(john.name); // Output: John
-console.log(john.age); // Output: 30
-console.log(john.myFunc())
+            1. regular function
+                function Person(name, age, myFunc) {
+                this.name = name;
+                this.age = age;
+                this.myFunc = myFunc;
+                }
+                function myFunc() {
+                    console.log("Im a function")
+                }
+                const john = new Person('John', 30, myFunc);
+                console.log(john.name); // Output: John
+                console.log(john.age); // Output: 30
+                console.log(john.myFunc())
 
-2. arrow function
-const Person = (name, age) => {
-  this.name = name;
-  this.age = age;
-  this.myFunc = myFunc;
-}
+            2. arrow function
+                const Person = (name, age) => {
+                this.name = name;
+                this.age = age;
+                this.myFunc = myFunc;
+                }
 
-const john = new Person('John', 30);
-console.log(john.name); // Output: John
-console.log(john.age); // Output: 30
+                const john = new Person('John', 30);
+                console.log(john.name); // Output: John
+                console.log(john.age); // Output: 30
 
-5. super
+        5. super
 
-class myFirst {
-    const name = 'John';
-    myFunc() {
-        console.log("I'm parent class")
-    }
-}
+            class myFirst {
+                const name = 'John';
+                myFunc() {
+                    console.log("I'm parent class")
+                }
+            }
 
-class child extends myFirst {
-    console.log(super.name)
-    console.log(super.myFunc())
-}
+            class child extends myFirst {
+                console.log(super.name)
+                console.log(super.myFunc())
+            }
 
-# ======================
+# ======================Function end =====================
 # Array
 
-1. numbers // const myArray = [2, 5, 6]
-2. string // const myArray = ['2', '#', 'ram']
-3. numbers & string (mixed array) // const myArray = [2, '#', 'ram']
-const myArray = [1, 5]
-myArray.push(8) // insert value from last index
-console.log(myArray) // [1,5,8]
-myArray.pop() // delete value from last index
-console.log(myArray) // [1,5]
-delete myArray[0]
+    1. numbers // const myArray = [2, 5, 6]
+    2. string // const myArray = ['2', '#', 'ram']
+    3. numbers & string (mixed array) // const myArray = [2, '#', 'ram']
+        const myArray = [1, 5]
+        myArray.push(8) // insert value from last index
+        console.log(myArray) // [1,5,8]
+        myArray.pop() // delete value from last index
+        console.log(myArray) // [1,5]
+        delete myArray[0]
 
-// assignment
- 1. slice,
- 2. splice
+    * Array Functions
+        a. push
+        2. pop
+        3. delete
+        4. isArray
+        5. forEach
+        6. map
+        7. filter
+        8. reduce
+        9. find
+        10. sort
+        11. reverse
+        12. slice
+        13. splice
 
-push,pop,delete,isArray,forEach,map,filter,reduce,find,sort,reverse
+
 
 # Object
-1. object.values
-2. object.entries
-3. object.keys
-4. for in
+    1. object.values
+    2. object.entries
+    3. object.keys
+    4. for in
 
-const  myObj = {name: 'Amar', age: 24, myFunc: ()=>{ "myFunc return"} }
-myObj.myFunc
+    const  myObj = {name: 'Amar', age: 24, myFunc: ()=>{ "myFunc return"} }
+    myObj.myFunc
 
 # string
-length
-charAt
-substring
-replace
-split
-toUpperCase
-toLowerCase
+    length
+    charAt
+    substring
+    replace
+    split
+    toUpperCase
+    toLowerCase
 
 # Date
 const currentDate = new Date()
@@ -443,27 +460,20 @@ if (true === '1') {
     console.log("false")
 }
 
-# DOM & BOM 
 
 
 
 
-
-
-
-
+# =========DOM & BOM============
 # DOM (Document Object Model)
  1. DOM Tree Structure 
+    document.createElement('div', {})
  2. Accessing DOM Elements
     1. getElementById
     2. getElmentsByClassname
     3. getElementByTagName
     4. querySector()
     5. querySectorAll()
-
-    
-
-
  3. Modifynig DOM Elements
     1. innerHTML
     2. innerText
@@ -471,6 +481,8 @@ if (true === '1') {
     4. style
     5. classList => add,remove
     6. textContet
+    7. replaceWith
+    8. append
 
  4. Responding Event Handlers
     1. click
@@ -486,50 +498,38 @@ if (true === '1') {
     7. change
     8. dblclick
 
-Event delegation:
+# Event delegation:
     
-    capturing
-    const myDivObj = document.getElementById("myDiv")
-    const myPara = document.getElementById("myPara")
-    const myButton = document.getElementById("myButton")
+    1. capturing
+        const myDivObj = document.getElementById("myDiv")
+        const myPara = document.getElementById("myPara")
+        const myButton = document.getElementById("myButton")
 
 
-    myDivObj.addEventListener("eventName", function(){}, false)
-    myPara.addEventListener("eventName", function(){}, true)
-    myButton.addEventListener("eventName", function(){}, false)
+        myDivObj.addEventListener("eventName", function(){
+            stopPropagation()
+        }, false)
+        myPara.addEventListener("eventName", function(){}, true)
+        myButton.addEventListener("eventName", function(){}, false)
 
 
-    bubbling
+    2. bubbling
 
-    myDivObj.addEventListener("eventName", function(){})
-    myPara.addEventListener("eventName", function(){})
-    myButton.addEventListener("eventName", function(){})
-
-
-
-
+        myDivObj.addEventListener("eventName", function(){
+            
+        })
+        myPara.addEventListener("eventName", function(){})
+        myButton.addEventListener("eventName", function(){})
 
 
+        1. stopPropagation() => it stops the event propagation
+        2. preventDefault() => it prenvet default behavior of dom
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# BOM
+# BOM (browser object model)
 1. window.document
 2. window.location: Provides information about the current URL and allows you to navigate to a new URL.
-    a. window.location.href
+    a. window.location.href = '/aboutus'
     b. window.location.host
     c. window.location.pathname
     d. window.location.search
@@ -550,15 +550,14 @@ Event delegation:
     e. navigator.cookieEnabled
     f. navigator.javaEnabled()
     g. navigator.onLine
-    h. navigator.plugins
-    i. navigator.geolocation.getCurrentPosition(function(position) {
+    h. navigator.geolocation.getCurrentPosition(function(position) {
         console.log('Latitude:', position.coords.latitude);
         console.log('Longitude:', position.coords.longitude);
         });
-    j. navigator.language
-    k. navigator.userLanguage
-    l. window.navigator.userAgentData
-    m. navigator.getBattery
+    i. navigator.language
+    j. navigator.userLanguage
+    k. window.navigator.userAgentData
+    l. navigator.getBattery
     navigator.getBattery().then(function(battery) {
         console.log('Battery Level:', battery.level);
         console.log('Charging:', battery.charging);
@@ -570,43 +569,300 @@ Event delegation:
             console.log('Charging status changed:', battery.charging);
         });
     });
-    n. navigator.clipboard
-     //writeText
-            window.navigator.clipboard.writeText('Hello, world!').then(function() {
-                console.log('Text copied to clipboard!');
-            }).catch((err) => {
-                console.log("===", err)   
-            })
-    //readText()
-            window.navigator.clipboard.readText().then(function(text) {
-                console.log('Text from clipboard:', text);
-            });
-    //write(data)
-            var dataTransfer = new DataTransfer();
-            dataTransfer.setData('text/plain', 'Hello, world!');
-            window.navigator.clipboard.write(dataTransfer).then(function() {
-                console.log('Data copied to clipboard!');
-            });
-    //read()
-            window.navigator.clipboard.read().then(function(dataTransfer) {
-                var text = dataTransfer.getData('text/plain');
-                console.log('Text from clipboard:', text);
-            });
+    
         
 
 5. window.screen => Provides information about the user's screen and display.
 6. window.innerWidth and window.innerHeight => Returns the inner width and height of the browser window.
 7. window.outerWidth and window.outerHeight => Returns the outer width and height of the browser window including any browser UI elements.
-8. window.localStorage and window.sessionStorage => Allow you to store data locally in the user's browser.
+8. window.localStorage, window.sessionStorage and cookie => Allow you to store data locally in the user's browser.
+    a. localstorage
+        1. memory will be more then session & cookie
+        2. it keeps data in browser until we remove from browser
+        3. it uses for browser only 
+
+        window.localStorage.setItem('myFirstMemory', 'this is my local storage')
+        window.localStorage.getItem('myFirstMemory')
+        window.localStorage.removeItem('myFirstMemory')
+        window.localStorage.clear()
+
+      
+
+        JSON.stringify(json) ==> it converts josn into string 
+        JSON.parse() ===> it converts string to json
+
+
+    b. sessionstorage
+        1. by default momory will be 8bg or depends on browser
+        2. when we close tab or window it destroys the session data
+        3. it uses for browser only
+
+        window.sessionStorage.setItem('myFirstMemory', 'this is my local storage')
+        window.sessionStorage.getItem('myFirstMemory')
+        window.sessionStorage.removeItem('myFirstMemory')
+        window.sessionStorage.clear()
+
+    c. cookie
+        1. it's always 4kb
+        2. it has expiry time so it will destroy data on expiry time & date
+        3. it uses for server
+       
 9. window.alert(), window.confirm(), and window.prompt() => Display dialogs to the user for interaction.
 10. window.setTimeout() and window.setInterval() => Enable scheduling of functions to run after a specified delay or at specified intervals.
 11. window.onresize => An event handler that triggers when the browser window is resized.
 12. window.open() => Opens a new browser window or tab.
 13. window.close() => Closes the current browser window or tab.
 14. window.print() => Opens the print dialog for the current page.
-15. window.scrollTo() => Scrolls the window to a specified position.
-16. window.scrollBy() => Scrolls the window by a specified amount.
-17. window.scrollTo() and window.scrollBy() => Scroll the window to a specified position or by a specified amount.
+15. window.scrollTo(), scrollIntoView(), window.scrollBy() => Scrolls the window to a specified position, element & specified amount.
+
+
+# ES6 Features 2015
+Arrow Functions
+Spread Operator => it expends & spreads array into individual elements.
+ 1. Array Manipulation
+    const array1 = [2, 4, 5]
+    const array2 = [6, 3,2]
+
+    const arrayCombine = [...array1, ...array2]
+
+    const newValue = 4
+    const appendNewValue = [..array1, newValue]
+    
+
+
+
+ 2. Object Manipulation
+    const obj1 = {name: "amar", age: 30}
+    const obj2 = {city: "Noida", state: "UP"}
+
+    const objCombine = {...obj1, ...obj2}
+
+    const objAddNewElement = {...obj1, gender: "male"}
+    const objReplaceKeyValue = {...obj1, name: "Vijay"}
+
+
+ 3. Function Arguments
+    function myFunc(a, b, c) {
+        console.log(a + b + c)
+    }
+    const array1 = [2,4,5]
+    myFunc(...array1)
+
+ 4. String to Array Conversion
+    const myString = "good morning"
+    const getArray = myString.split('')
+    console.log(getArray)
+
+    const getArrayToString = [...myString]
+    console.log(getArrayToString)
+
+Rest Operator => it converts individual elements into array
+    function myFunc(...params) {
+        console.log(params)
+    }
+
+    myFunc(1, 4, 6)
+
+# Promises => 
+1. synchronous =>  it executes code line by line, it waits to complete execution of first line of code then move to second line of code. It never goes other line until it complets execution of first line.
+
+2. asynchronous => It executes code and never wait for result and move quickly to line. for handdling this situation we use callback, promise, async & await.
+
+3. callback => a function which perform async operation.
+4. disadvantage of callback(Callback Hell) => When we use callback inside callback it may be mutilple lavel then it is not able to return output. this situation is called callback hell.
+example: 
+function myFunc((
+        () => {
+
+        }) => {
+})
+
+# Note: javscript introduce new feature to overcome callback hell. this is Promise
+
+
+Promise => it performs asynchronous operation.
+example:
+const myPromise = new Promise(function(resolve, reject) {
+    if(true) {
+        resolve("success")
+    } else {
+        reject("fail")
+    }
+})
+
+myPromise.then(function(result){
+    console.log("result", result)
+}).catch(function(err){
+     console.log("err", err)
+})
+
+===========Promise===================
+
+# Handdle Multiple Promise
+    1. promise.all() ==> it returns all promise results after execute all promise
+    2. promise.race() ==> it returns result one by one, it completes first promise then it executes second promise then return second promise result.
+    example:
+    const promise2 = "my second"
+    const promise3 = 3
+
+    Promise ALL Example===>
+    Promise.all(myPromise, promise2, promise3).then(function(myPromiseResult, promise2Result, promise3Result) {
+
+    }).catch(function(err, err2, err3){
+
+    });
+
+    Promise Race Example ===>
+    Promise.race(myPromise, promise2, promise3).then(function(myPromiseResult, promise2Result, promise3Result) {
+        console.log(myPromiseResult)
+    }).catch(function(err, err2, err3){
+
+    });
+
+
+
+
+Async/Await ==> Async/Await handdle async operation it never goes other line until it gets result. Await works with Async always.
+Example: 
+function myFunc(async function(){
+    const myUserApi = await myNewLoginc() // API operation
+})
+function myNewLoginc() {
+    // any operation
+}
+
+
+Block-scoped Variables (let and const) 
+global scope ===> we can access variable enitre code (var)
+block scope ==> we can access variable in block only{ } (let & const) 
+lexical scope ==>  lets discuss in closure
+
+Default Parameters
+    function myFunc(param1, param2 = 1, param3 = 4) {
+        console.log(param1, param2, param3)
+    }
+
+    myFunc(2)
+
+    function myFunc(param1, param2 = 0, param3 = false) {
+        console.log(param1, param2, param3)
+    }
+
+    myFunc(2, 5, true)
+
+Destructuring Assignment 
+        1. Array
+            let names = ['amar', 'sanni', 'pawan', 'vijay', 'rakesh'];
+            let [name1, name2, name3, name4, name5] = names;
+            console.log(name1, name2, name3, name4, name5)
+        2. Object / Object Literal Enhancements
+            const myObj = {
+                name: "amar",
+                age: 30,
+                myAddressObj: {
+                    city: 'noida',
+                    state: 'up',
+                    myLocalAddressObj: {local: 'Orai'}
+                },
+                
+                myArray: [12, 34, 6],
+                myFunc: function name() {
+                    console.log("my function")
+                }               
+            }
+
+            const {name: newName = '', age = 0,  myAddressObj: {city, state, myLocalAddressObj}, myArray, myFunc } = myObj
+
+            console.log(newName, age, myAddressObj, city, state, myLocalAddressObj, myArray, myFunc)
+
+
+
+# String Interpolation (Template Literals)
+
+    let myName = 'amar'
+    const myPara = 'My Name is "+myName+"' // Old way
+
+    const myPara = `My Name is ${myName}` // new way (backticks)
+
+    const myName = 'amar'
+    const myPara = `My Name is ${myName}`
+    
+    const a = 4
+    const b = 5
+    const myPara = `My Name is ${a+b}`
+    console.log(myPara)
+    const myPara = `My Name is ${a+b > 8 ? 'True': 'False'}`
+
+    1. we can perform mathematical operations inside template literals
+    2. we can use statement, looping & ternory operator
+
+
+
+    
+# Classes
+
+    class MyClass {
+        constructor(height, width) {
+            this.height = height
+            this.width = width
+        }
+        getArea() {
+            return this.height * this.width
+        }
+    }
+
+    const myReactangle = new MyClass(2, 4)
+    console.log(myReactangle.getArea())
+
+
+# Import/Export Modules ==> discuss in react class
+
+# closure
+    combination of functions and lexical scope is called closure.
+
+    function outerFun() {
+        const myName = 'Amar'
+
+        return function innerFunc() {
+            console.log("myName", myName)
+        }
+    }
+    const getMyInnerFunc = outerFun()
+    getMyInnerFunc()
+
+# hoisting
+    hoisting is nothing, it's only that we can use variables and function before initilaztion but only for var & function.
+    it's not for (let & const)
+
+
+
+
+# Practice & Interview Question
+prototypes & prototypal
+deep copy & sallow copy
+factory function
+generator 
+temporal deadzone
+high order function
+pure function 
+debouncing/throtling  
+polyfil
+pattern
+other es6 features
+    Iterators
+    Symbol
+    Generators
+    Proxy
+    Reflect
+logical program
+ factorial
+ febonnaci searise
+ sorting
+ string Match
+ search
+ tricky program
+
+
  
 
 

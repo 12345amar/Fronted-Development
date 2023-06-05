@@ -3,8 +3,10 @@
     <head>
        
     </head>
-    <body>
+    <body id="myBody">
         <div class="first-dv">
+            <p class="calculate">my paragraph class</p>
+            <p id="myCalculateId">my paragraph id</p>
             <select id="city-name">
                 <option value="Noida">Noida</option>
                 <option value="Lucknow">Lucknow</option>
@@ -24,12 +26,57 @@
             <p>I am paragraph od second div <a href="#" class="link">I am link</a><em>I am em</em></p>
         </div>
     </body>
-    <script type="text/javascript" src="navigator.js"></script>
-    <script type="text/javascript" src="navigator.clipboard.js"></script>
+   <script type="text/javascript" src="navigator.js"></script>
+    <!-- <script type="text/javascript" src="navigator.clipboard.js"></script> -->
 <div id="myDiv">
     <span>werwer</span>
     <p id="myPara">
         <button type="button" id="myButton">My Button</button>
     </p>
+
+    <button type="button" onclick="setCookie('username', 'John', 7)">Set Cookie ("username", "John", 7)</button>
+    <button type="button" onclick="getCookie()">Get Cookie</button>
 </div>
+<script>
+   // const myBody = document.getElementById("myBody")
+    let x = 5;
+    
+    
+    document.getElementsByClassName("calculate")[0].innerHTML = (x === 5)
+    document.getElementById("myCalculateId").innerHTML = (x === 5)
+
+   window.addEventListener("resize", function(event) {
+    console.log("=onresize===", window.innerHeight, innerWidth, outerHeight, outerWidth)
+   });
+
+   myBody.addEventListener("click", function() {
+    console.log("==click event==")
+   })
+    console.log("====", window.location.host)
+ // Function to set a cookie
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + value + expires + "; path=/";
+
+ 
+  console.log("cookies has been set", name + "=" + value + expires + "; path="+window.location.pathname+"")
+}
+
+// Function to get the value of a cookie
+function getCookie() {
+  var cookieName = name + "=";
+  var cookies = document.cookie.split(';');
+  console.log("cookies", cookies)
+
+}
+
+// Setting a cookie
+// setCookie("username", "John", 7);
+
+    </script>
 </html>
