@@ -24,7 +24,7 @@
     setTimeout(() => console.log("Second console"), 0);
 
     Promise.resolve().then(() =>console.log("third console"))
-    
+
     console.log("ending")
 
 # output==>
@@ -452,16 +452,16 @@ const currentDate = new Date()
 
 
 # Boolean  
-true ====> 1
-false ==> 0
+    true ====> 1
+    false ==> 0
 
 
 
-if (true === '1') {
-    console.log("true")
-} else {
-    console.log("false")
-}
+    if (true === '1') {
+        console.log("true")
+    } else {
+        console.log("false")
+    }
 
 
 
@@ -530,174 +530,174 @@ if (true === '1') {
 
 
 # BOM (browser object model)
-1. window.document
-2. window.location: Provides information about the current URL and allows you to navigate to a new URL.
-    a. window.location.href = '/aboutus'
-    b. window.location.host
-    c. window.location.pathname
-    d. window.location.search
-    e. window.location.reload()
+    1. window.document
+    2. window.location: Provides information about the current URL and allows you to navigate to new URL.
+        a. window.location.href = '/aboutus'
+        b. window.location.host
+        c. window.location.pathname
+        d. window.location.search
+        e. window.location.reload()
 
-3. window.history: Allows you to manipulate the browser's history (back, forward, and navigation).
-    a. history.back()
-    b. history.forward()
-    c. history.go(-2)
-    d. history.go(3)
-    e. history.replaceState({}, '', '/new-url')
-    f. history.pushState({}, '', '/another-url')
-4. window.navigator => Provides information about the user's browser and operating system.
-    a. navigator.userAgent
-    b. navigator.appName
-    c. navigator.appVersion
-    d. navigator.platform
-    e. navigator.cookieEnabled
-    f. navigator.javaEnabled()
-    g. navigator.onLine
-    h. navigator.geolocation.getCurrentPosition(function(position) {
-        console.log('Latitude:', position.coords.latitude);
-        console.log('Longitude:', position.coords.longitude);
-        });
-    i. navigator.language
-    j. navigator.userLanguage
-    k. window.navigator.userAgentData
-    l. navigator.getBattery
-    navigator.getBattery().then(function(battery) {
-        console.log('Battery Level:', battery.level);
-        console.log('Charging:', battery.charging);
-        console.log('Charging Time:', battery.chargingTime);
-        console.log('Discharging Time:', battery.dischargingTime);
+    3. window.history: Allows you to manipulate the browser's history (back, forward, and navigation).
+        a. history.back()
+        b. history.forward()
+        c. history.go(-2)
+        d. history.go(3)
+        e. history.replaceState({}, '', '/new-url')
+        f. history.pushState({}, '', '/another-url')
+    4. window.navigator => Provides information about the user's browser and operating system.
+        a. navigator.userAgent
+        b. navigator.appName
+        c. navigator.appVersion
+        d. navigator.platform
+        e. navigator.cookieEnabled
+        f. navigator.javaEnabled()
+        g. navigator.onLine
+        h. navigator.geolocation.getCurrentPosition(function(position) {
+            console.log('Latitude:', position.coords.latitude);
+            console.log('Longitude:', position.coords.longitude);
+            });
+        i. navigator.language
+        j. navigator.userLanguage
+        k. window.navigator.userAgentData
+        l. navigator.getBattery
+        navigator.getBattery().then(function(battery) {
+            console.log('Battery Level:', battery.level);
+            console.log('Charging:', battery.charging);
+            console.log('Charging Time:', battery.chargingTime);
+            console.log('Discharging Time:', battery.dischargingTime);
 
-        // Add an event listener to track changes in battery status
-        battery.addEventListener('chargingchange', function() {
-            console.log('Charging status changed:', battery.charging);
+            // Add an event listener to track changes in battery status
+            battery.addEventListener('chargingchange', function() {
+                console.log('Charging status changed:', battery.charging);
+            });
         });
-    });
-    
+        
+            
+
+    5. window.screen => Provides information about the user's screen and display.
+    6. window.innerWidth and window.innerHeight => Returns the inner width and height of the browser window.
+    7. window.outerWidth and window.outerHeight => Returns the outer width and height of the browser window including any browser UI elements.
+    8. window.localStorage, window.sessionStorage and cookie => Allow you to store data locally in the user's browser.
+        a. localstorage
+            1. memory will be more then session & cookie
+            2. it keeps data in browser until we remove from browser
+            3. it uses for browser only 
+
+            window.localStorage.setItem('myFirstMemory', 'this is my local storage')
+            window.localStorage.getItem('myFirstMemory')
+            window.localStorage.removeItem('myFirstMemory')
+            window.localStorage.clear()
+
         
 
-5. window.screen => Provides information about the user's screen and display.
-6. window.innerWidth and window.innerHeight => Returns the inner width and height of the browser window.
-7. window.outerWidth and window.outerHeight => Returns the outer width and height of the browser window including any browser UI elements.
-8. window.localStorage, window.sessionStorage and cookie => Allow you to store data locally in the user's browser.
-    a. localstorage
-        1. memory will be more then session & cookie
-        2. it keeps data in browser until we remove from browser
-        3. it uses for browser only 
-
-        window.localStorage.setItem('myFirstMemory', 'this is my local storage')
-        window.localStorage.getItem('myFirstMemory')
-        window.localStorage.removeItem('myFirstMemory')
-        window.localStorage.clear()
-
-      
-
-        JSON.stringify(json) ==> it converts josn into string 
-        JSON.parse() ===> it converts string to json
+            JSON.stringify(json) ==> it converts josn into string 
+            JSON.parse() ===> it converts string to json
 
 
-    b. sessionstorage
-        1. by default momory will be 8bg or depends on browser
-        2. when we close tab or window it destroys the session data
-        3. it uses for browser only
+        b. sessionstorage
+            1. by default momory will be 8bg or depends on browser
+            2. when we close tab or window it destroys the session data
+            3. it uses for browser only
 
-        window.sessionStorage.setItem('myFirstMemory', 'this is my local storage')
-        window.sessionStorage.getItem('myFirstMemory')
-        window.sessionStorage.removeItem('myFirstMemory')
-        window.sessionStorage.clear()
+            window.sessionStorage.setItem('myFirstMemory', 'this is my local storage')
+            window.sessionStorage.getItem('myFirstMemory')
+            window.sessionStorage.removeItem('myFirstMemory')
+            window.sessionStorage.clear()
 
-    c. cookie
-        1. it's always 4kb
-        2. it has expiry time so it will destroy data on expiry time & date
-        3. it uses for server
-       
-9. window.alert(), window.confirm(), and window.prompt() => Display dialogs to the user for interaction.
-10. window.setTimeout() and window.setInterval() => Enable scheduling of functions to run after a specified delay or at specified intervals.
-11. window.onresize => An event handler that triggers when the browser window is resized.
-12. window.open() => Opens a new browser window or tab.
-13. window.close() => Closes the current browser window or tab.
-14. window.print() => Opens the print dialog for the current page.
-15. window.scrollTo(), scrollIntoView(), window.scrollBy() => Scrolls the window to a specified position, element & specified amount.
+        c. cookie
+            1. it's always 4kb
+            2. it has expiry time so it will destroy data on expiry time & date
+            3. it uses for server
+        
+    9. window.alert(), window.confirm(), and window.prompt() => Display dialogs to the user for interaction.
+    10. window.setTimeout() and window.setInterval() => Enable scheduling of functions to run after a specified delay or at specified intervals.
+    11. window.onresize => An event handler that triggers when the browser window is resized.
+    12. window.open() => Opens a new browser window or tab.
+    13. window.close() => Closes the current browser window or tab.
+    14. window.print() => Opens the print dialog for the current page.
+    15. window.scrollTo(), scrollIntoView(), window.scrollBy() => Scrolls the window to a specified position, element & specified amount.
 
 
 # ES6 Features 2015
-Arrow Functions
-Spread Operator => it expends & spreads array into individual elements.
- 1. Array Manipulation
-    const array1 = [2, 4, 5]
-    const array2 = [6, 3,2]
+    Arrow Functions
+    Spread Operator => it expends & spreads array into individual elements.
+    1. Array Manipulation
+        const array1 = [2, 4, 5]
+        const array2 = [6, 3,2]
 
-    const arrayCombine = [...array1, ...array2]
+        const arrayCombine = [...array1, ...array2]
 
-    const newValue = 4
-    const appendNewValue = [..array1, newValue]
-    
-
-
-
- 2. Object Manipulation
-    const obj1 = {name: "amar", age: 30}
-    const obj2 = {city: "Noida", state: "UP"}
-
-    const objCombine = {...obj1, ...obj2}
-
-    const objAddNewElement = {...obj1, gender: "male"}
-    const objReplaceKeyValue = {...obj1, name: "Vijay"}
+        const newValue = 4
+        const appendNewValue = [..array1, newValue]
+        
 
 
- 3. Function Arguments
-    function myFunc(a, b, c) {
-        console.log(a + b + c)
-    }
-    const array1 = [2,4,5]
-    myFunc(...array1)
 
- 4. String to Array Conversion
-    const myString = "good morning"
-    const getArray = myString.split('')
-    console.log(getArray)
+    2. Object Manipulation
+        const obj1 = {name: "amar", age: 30}
+        const obj2 = {city: "Noida", state: "UP"}
 
-    const getArrayToString = [...myString]
-    console.log(getArrayToString)
+        const objCombine = {...obj1, ...obj2}
 
-Rest Operator => it converts individual elements into array
-    function myFunc(...params) {
-        console.log(params)
-    }
+        const objAddNewElement = {...obj1, gender: "male"}
+        const objReplaceKeyValue = {...obj1, name: "Vijay"}
+
+
+    3. Function Arguments
+        function myFunc(a, b, c) {
+            console.log(a + b + c)
+        }
+        const array1 = [2,4,5]
+        myFunc(...array1)
+
+    4. String to Array Conversion
+        const myString = "good morning"
+        const getArray = myString.split('')
+        console.log(getArray)
+
+        const getArrayToString = [...myString]
+        console.log(getArrayToString)
+
+    Rest Operator => it converts individual elements into array
+        function myFunc(...params) {
+            console.log(params)
+        }
 
     myFunc(1, 4, 6)
 
 # Promises => 
-1. synchronous =>  it executes code line by line, it waits to complete execution of first line of code then move to second line of code. It never goes other line until it complets execution of first line.
+    1. synchronous =>  it executes code line by line, it waits to complete execution of first line of code then move to second line of code. It never goes other line until it complets execution of first line.
 
-2. asynchronous => It executes code and never wait for result and move quickly to line. for handdling this situation we use callback, promise, async & await.
+    2. asynchronous => It executes code and never wait for result and move quickly to line. for handdling this situation we use callback, promise, async & await.
 
-3. callback => a function which perform async operation.
-4. disadvantage of callback(Callback Hell) => When we use callback inside callback it may be mutilple lavel then it is not able to return output. this situation is called callback hell.
-example: 
-function myFunc((
-        () => {
+    3. callback => a function which perform async operation.
+    4. disadvantage of callback(Callback Hell) => When we use callback inside callback it may be mutilple lavel then it is not able to return output. this situation is called callback hell.
+        example: 
+        function myFunc((
+                () => {
 
-        }) => {
-})
+                }) => {
+        })
 
-# Note: javscript introduce new feature to overcome callback hell. this is Promise
+    * Note: javscript introduce new feature to overcome callback hell. this is Promise
 
 
-Promise => it performs asynchronous operation.
-example:
-const myPromise = new Promise(function(resolve, reject) {
-    if(true) {
-        resolve("success")
-    } else {
-        reject("fail")
-    }
-})
+    Promise => it performs asynchronous operation.
+    example:
+    const myPromise = new Promise(function(resolve, reject) {
+        if(true) {
+            resolve("success")
+        } else {
+            reject("fail")
+        }
+    })
 
-myPromise.then(function(result){
-    console.log("result", result)
-}).catch(function(err){
-     console.log("err", err)
-})
+    myPromise.then(function(result){
+        console.log("result", result)
+    }).catch(function(err){
+        console.log("err", err)
+    })
 
 ===========Promise===================
 
@@ -709,51 +709,51 @@ myPromise.then(function(result){
     const promise3 = 3
 
     Promise ALL Example===>
-    Promise.all(myPromise, promise2, promise3).then(function(myPromiseResult, promise2Result, promise3Result) {
-
-    }).catch(function(err, err2, err3){
-
-    });
+         Promise.all([myPromise, promise2, promise3]).then(result) {
+            console.log(result) ===> recieved array
+        }).catch(function(err){
+            console.log(err) ===> recieved array
+        });
 
     Promise Race Example ===>
-    Promise.race(myPromise, promise2, promise3).then(function(myPromiseResult, promise2Result, promise3Result) {
-        console.log(myPromiseResult)
-    }).catch(function(err, err2, err3){
-
-    });
-
-
+        Promise.race([myPromise, promise2, promise3]).then(result) {
+            console.log(result)
+        }).catch(function(err){
+            console.log(err)
+        });
 
 
-Async/Await ==> Async/Await handdle async operation it never goes other line until it gets result. Await works with Async always.
-Example: 
-function myFunc(async function(){
-    const myUserApi = await myNewLoginc() // API operation
-})
-function myNewLoginc() {
-    // any operation
-}
 
 
-Block-scoped Variables (let and const) 
-global scope ===> we can access variable enitre code (var)
-block scope ==> we can access variable in block only{ } (let & const) 
-lexical scope ==>  lets discuss in closure
-
-Default Parameters
-    function myFunc(param1, param2 = 1, param3 = 4) {
-        console.log(param1, param2, param3)
+# Async/Await ==> Async/Await handdle async operation it never goes other line until it gets result. Await works with Async always.
+    Example: 
+    function myFunc(async function(){
+        const myUserApi = await myNewLoginc() // API operation
+    })
+    function myNewLoginc() {
+        // any operation
     }
 
-    myFunc(2)
 
-    function myFunc(param1, param2 = 0, param3 = false) {
-        console.log(param1, param2, param3)
-    }
+# Block-scoped Variables (let and const)
+    global scope ===> we can access variable enitre code (var)
+    block scope ==> we can access variable in block only{ } (let & const) 
+    lexical scope ==>  lets discuss in closure
 
-    myFunc(2, 5, true)
+# Default Parameters
+        function myFunc(param1, param2 = 1, param3 = 4) {
+            console.log(param1, param2, param3)
+        }
 
-Destructuring Assignment 
+        myFunc(2)
+
+        function myFunc(param1, param2 = 0, param3 = false) {
+            console.log(param1, param2, param3)
+        }
+
+        myFunc(2, 5, true)
+
+# Destructuring Assignment 
         1. Array
             let names = ['amar', 'sanni', 'pawan', 'vijay', 'rakesh'];
             let [name1, name2, name3, name4, name5] = names;
@@ -783,7 +783,7 @@ Destructuring Assignment
 # String Interpolation (Template Literals)
 
     let myName = 'amar'
-    const myPara = 'My Name is "+myName+"' // Old way
+    const myPara = 'My Name is '+myName+'' // Old way
 
     const myPara = `My Name is ${myName}` // new way (backticks)
 
@@ -841,29 +841,29 @@ Destructuring Assignment
 
 
 # Practice & Interview Question
-prototypes & prototypal
-deep copy & sallow copy
-factory function
-generator 
-temporal deadzone
-high order function
-pure function 
-debouncing/throtling  
-polyfil
-pattern
-other es6 features
-    Iterators
-    Symbol
-    Generators
-    Proxy
-    Reflect
-logical program
- factorial
- febonnaci searise
- sorting
- string Match
- search
- tricky program
+    prototypes & prototypal
+    deep copy & sallow copy
+    factory function
+    generator 
+    temporal deadzone
+    high order function
+    pure function 
+    debouncing/throtling  
+    polyfil
+    pattern
+    other es6 features
+        Iterators
+        Symbol
+        Generators
+        Proxy
+        Reflect
+    logical program
+    factorial
+    febonnaci searise
+    sorting
+    string Match
+    search
+    tricky program
 
 
  
