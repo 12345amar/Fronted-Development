@@ -1,3 +1,8 @@
+
+HTML & CSS
+javascript
+React
+
 # ===============React JS========================
 
 # What is reactjs?
@@ -21,6 +26,34 @@
 # Webpack => 
     this is bundler, which generate bundles of js, css & assets of react project.  
   
+
+# Webpack Features (bundler) 
+defferent type of bundler => parcel/vite
+
+    1. Module bundling
+    2. Code splitting
+    3. Loaders (css-loader style-loader, file-loader, url-loader) 
+    4. Plugins  (html-webpack-plugin, HotModuleReplacementPlugin)
+    5. Development server / Multiple environments and configuration
+    6. Code optimization / Performance optimization
+        1. Minification (terser-webpack-plugin)
+        2. Tree Shaking
+        3. Code Splitting
+            a. lazy loading
+            b. dynamic loading/imports 
+        4. Caching and Long-Term Caching:
+        5. webpack-bundle-analyzer
+    7. Asset management
+        1. file-loader / url-loader
+        2. json-loader
+    8. Integration with the ecosystem
+        1. Integration with Babel (babel-loader, @babel/preset-env)
+        JSX => Javascript XML
+        2. Integration with CSS preprocessors
+        3. Integration with React
+        4. Integration with Testing Framework
+        5. ESLint (eslint eslint-loader)
+  
 # Setup webpack
     Step 1. setup package file & webpack package
         a. npm init -y
@@ -42,115 +75,73 @@
            package.json inside script => "start": "webpack-dev-server --mode development --open"
 
     Step 9. css loading
+      `npm install css-loader style-loader --save-dev`
+      module: {
+      rules: [
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
+        },
+      ],
+      }
+    setup babel/jsx/html
+      `npm install react react-dom`
+      `npm install @babel/core @babel/preset-env @babel/preset-react babel-loader --save-dev`
+        module.exports = {
+          entry: './src/index.js',
+          output: {
+            path: path.resolve(__dirname, 'dist'),
+            filename: 'bundle.js',
+          },
+          module: {
+            rules: [
+              {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                  loader: 'babel-loader',
+                  options: {
+                    presets: ['@babel/preset-env', '@babel/preset-react'],
+                  },
+                },
+              },
+            ],
+          },
+          resolve: {
+            extensions: ['.js', '.jsx'],
+          },
+        };
+
+
+        {
+          "presets": ["@babel/preset-env", "@babel/preset-react"]
+        }
+
     Step 10. image/font loading
+      npm install file-loader --save-dev
+
+        {
+            test: /\.(png|jpe?g|gif|svg)$/i,
+            use: [
+              {
+                loader: 'file-loader',
+                options: {
+                  name: '[name].[ext]',
+                  outputPath: 'images',
+                },
+              },
+            ],
+          },
+
     Step 11. move index.html into src folder
-     npm i html-webpack-plugin --save-dev
+        npm i html-webpack-plugin --save-dev
      
         plugins: HtmlWebpackPlugin({
         filename: 'index.html' ,
         template: './src/index.html'
         '})
 
-
-
-
-
-        
-
-
-
-    add starting file name in josn file inside script
-
-npm run build
-explain webpack & it's feature
-
-create webpack.config.js and remove warning 
-module.exports={
-mode: "development" / "production"
-}
-
-rename name index.js to app.js
-and add entry point into webpack.config.js
-module.exports={
-mode: "development" / "production",
-entry: "./src/app.js"
-}
-
-
-change dist file name => main.js
-
-add path
-const path = require('path')module.exports={
-mode: "development" / "production",
-entry: "./src/app.js",
-output: {
-  path: path.resolve(__dirname, dist),
-  filename: 'out.js'
-}
-}
-
-install 
-npm i webpack-dev-server --save-dev
-
-create script inside package.json
-"start": "webpack-dev-server --mode development --open"
-
-set server inside webpack.config.js
-const path = require('path')module.exports={
-mode: "development" / "production",
-entry: "./src/app.js",
-output: {
-  path: path.resolve(__dirname, dist),
-  filename: 'out.js'
-},
-devServer: {
-static:path.join(__dirname, dist),
-compress: true,
-port: 3000
-}
-}
-
-
-setup css loaing package
-npm i --save-dev style-loader css-loader
-after install set up css loader inside webpack.config.jsset server inside webpack.config.js
-const path = require('path')module.exports={
-mode: "development" / "production",
-entry: "./src/app.js",
-output: {
-  path: path.resolve(__dirname, dist),
-  filename: 'out.js'
-},
-devServer: {
-static:path.join(__dirname, dist),
-compress: true,
-port: 3000
-},
-
-module:{
-  rules:[
-   {
-   test:/\.css$/,
-   use:['style-loader', css-loader]
-  }
-]
-}
-}
-
-
-move index.html into src folder
-npm i html-webpack-plugin --save-dev
-
-add plugins inside webpack.config
-
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-
-plugins: HtmlWebpackPlugin({
-filename: 'index.html' ,
-template: './src/index.html'
-'})
-
-# npm
+# npm => it's node package and javascript package manager
     1. npm init / npm init (--y/-y) 
     2. npm install package-name
     3. npm install package-name --save-dev
@@ -165,83 +156,119 @@ template: './src/index.html'
     12 npm cache clean
 
 
+# React Setup
+  npx create-react-app app_name
+
+# Component
 
 
-# Webpack Features (bundler) 
-defferent type of bundler => parcel/vite
+class component
 
-    1. Module bundling
-    2. Code splitting
-    3. Loaders (css-loader style-loader, file-loader, url-loader) 
-    4. Plugins  (html-webpack-plugin, HotModuleReplacementPlugin)
-    5. Development server / Multiple environments and configuration
-    
-        //for development (webpack-dev-server)
+    import React from 'react';
+    class ExampleComponent extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { count: 0 };
+        console.log('Constructor called');
+      }
 
-        webpack file
-        const path = require('path');
+      componentDidMount() {
+        console.log('Component did mount');
+        document.title = `Count: ${this.state.count}`;
+      }
 
-        module.exports = {
-        entry: './src/index.js',
-        output: {
-            path: path.resolve(__dirname, 'dist'),
-            filename: 'bundle.js',
-        },
-        devServer: {
-            contentBase: path.resolve(__dirname, 'dist'),
-            port: 8080,
-        },
-        };
-
-        package.json scripts
-        "scripts": {
-            "start": "webpack-dev-server --open"
+      componentDidUpdate(prevProps, prevState) {
+        console.log('Component did update');
+        if (prevState.count !== this.state.count) {
+          console.log('Count has changed');
+          document.title = `Count: ${this.state.count}`;
         }
+      }
 
-        // for production 
-        "scripts": {
-            "build": "webpack --mode production"
+      componentWillUnmount() {
+        console.log('Component will unmount');
+        document.title = 'React App';
+      }
+
+      shouldComponentUpdate(nextProps, nextState) {
+        console.log('Should component update');
+        if (nextState.count === 5) {
+          return false; // Prevent further updates when count reaches 5
         }
+        return true;
+      }
 
-    6. Code optimization / Performance optimization
-        1. Minification (terser-webpack-plugin)
-        2. Tree Shaking
-        3. Code Splitting
-            a. lazy loading
-            b. dynamic loading/imports 
-        4. Caching and Long-Term Caching:
-        5. webpack-bundle-analyzer
-    
-    7. Asset management
-        1. file-loader / url-loader
-        2. json-loader
+      static getDerivedStateFromProps(nextProps, prevState) {
+        console.log('Get derived state from props');
+        if (nextProps.resetCount) {
+          return { count: 0 }; // Reset count if resetCount prop is true
+        }
+        return null;
+      }
 
-        module.exports = {
-        // ...
-        module: {
-            rules: [
-        {
-            test: /\.(png|jpe?g|gif|svg)$/,
-            use: [
-            {
-                loader: 'file-loader',
-                options: {
-                name: '[name].[hash].[ext]',
-                outputPath: 'images/',
-                    },
-                    },
-                    ],  
-                    },
-                ],
-            },
-            };
+      getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log('Get snapshot before update');
+        return prevState.count; // Capture previous count value
+      }
 
-    Integration with the ecosystem
-        1. Integration with Babel (babel-loader, @babel/preset-env)
-        2. Integration with CSS preprocessors
-        3. Integration with React
-        4. Integration with Testing Framework
-        5. ESLint (eslint eslint-loader)
+      increment() {
+        this.setState({ count: this.state.count + 1 });
+      }
+
+      render() {
+        console.log('Render called');
+        return (
+          <div>
+            <p>Count: {this.state.count}</p>
+            <button onClick={() => this.increment()}>Increment</button>
+          </div>
+        );
+      }
+    }
+
+    export default ExampleComponent;
+
+
+# React Setup
+ npx create-react-app project_name
+
+ cd prject_name
+
+ npm run start/npm start
+ npm run build
+
+# props => 
+props(Short of Property) is a property(Short of Property) of a component, we send props from parent component to child and when we recieve props in child we can not edit but we use all properties of props in child component.
+
+
+function MyFun(props) {
+  console.log(param1)
+}
+
+<MyFun name="amar"/>
+
+# state => 
+it's properties of react which  refers to an internal memory mechanism, when we update state then it renders the ui for updating state value. 
+there are two types of state.
+Stateless => fucntion is a stateless component 
+Stateful =>  class is a stateful
+# state behaviour =>
+ 1. it updates componet value in asynchronic behaviour
+ 2. if we want to update state value in UI directlythen we can use callback/promise
+
+# components => 
+component is a a component is a reusable, self-contained building block that part of the user interface which recieves props and return a react elements.
+component allows developers to create modular and reusable code.
+Type of component
+1. class component
+2. function component
+
+
+
+
+
+
+
 
 
 

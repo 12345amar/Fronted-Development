@@ -1,14 +1,13 @@
-export function helloworld() {
-
-    return "Hello, world!";
+export const HelloWorld = () => {
+    return 'Hello, World!'
 }
 
-export function secondfun() {
-
-    return "This is my second fun";
+export const HelloWorldTwo = () => {
+    return 'Hello, World!'
 }
 
-export default function defaultFun() {
-
-    return "this is my default fun";
+const HelloWorldDefault = () => {
+    return 'Hello, World!'
 }
+
+export default HelloWorldDefault
