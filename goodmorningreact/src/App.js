@@ -1,5 +1,7 @@
-import './App.css';
+import './assests/style.css'
+import HelloClass from './components/HelloClass';
 import HelloWorld from './components/HelloWorld'
+import ToDoList from './components/ToDoList';
 
 function App() {
   const name = 'Amar'
@@ -11,7 +13,12 @@ function App() {
 
 
   return (
-   <HelloWorld name={name} age={age} myDetails={myDetails}/>
+    <>
+    
+      <HelloWorld name={name} age={age} myDetails={myDetails} />
+      <ToDoList />
+      {/* <HelloClass /> */}
+    </>
   );
 }
 

@@ -1,0 +1,31 @@
+.todo-container {
+display: flex;
+justify-content: center;
+border-bottom: 1px solid gray;
+padding-bottom: 10px;
+}
+.todo-add-section {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+.todo-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.todo-list:nth-child(odd) {
+    background-color: lightgray;
+}
+
+.todo-list:nth-child(even) {
+    background-color: darkgray;
+}
+
+.todo-list div {
+    width: 30%;
+}
+.todo-list div button:nth-child(2) {
+    margin-left: 5px;
+}
