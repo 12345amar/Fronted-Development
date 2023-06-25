@@ -11,5 +11,9 @@ npm install -d style-loader
 
 # difference between npm and npx
 
+# difference between arrow and regular function in class component
+
+# what use of preventDefault
+
 
 

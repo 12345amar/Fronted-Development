@@ -166,7 +166,7 @@ defferent type of bundler => parcel/vite
  npm run build
 
 # props => 
-props(Short of Property) is a property(Short of Property) of a component, we send props from parent component to child and when we recieve props in child we can not edit but we use all properties of props in child component.
+props(Short of Property) is a property of a component, we send props from parent component to child and when we recieve props in child we can not edit but we use all properties of props in child component.
 
 
 function MyFun(props) {
@@ -182,7 +182,7 @@ Stateless => fucntion is a stateless component
 Stateful =>  class is a stateful
 # state behaviour =>
  1. it updates componet value in asynchronic behaviour
- 2. if we want to update state value in UI directlythen we can use callback/promise
+ 2. if we want to update state value in UI directly then we can use callback/promise
 
 # components => 
 component is a a component is a reusable, self-contained building block that part of the user interface which recieves props and return a react elements.
@@ -190,6 +190,59 @@ component allows developers to create modular and reusable code.
 Type of component
 1. class component
 2. function component
+
+# Class Component ==> it's stateful, it manages state
+   life cycle method
+    phase 1=>  constructor
+    phase 2=> componentDidMount
+    phase 3=> componentDidUpdate(prevProps, prevState)
+    phase 4=> componentWillUnmount()
+
+    other method ==>
+      1. shouldComponentUpdate(nextProps, nextState) => pure component
+      2. static getDerivedStateFromProps(nextProps, prevState)
+      3. getSnapshotBeforeUpdate(prevProps, prevState)
+
+# functional component => it's stateless, it does not manage state and life cycle method
+  lifecycle method
+  1. useState
+  2. useEffect
+
+# difference between class component and functional component
+  1. class component
+      a. We use javascript but we inherit React.Component from react library
+      b. it is stateful because it maintains the state
+      c. we have to constructor to initialize state and props
+      d. we use multiple function to handle lifecycle method
+        componentDidMount, componentDidUpdate, componentWillUnmount
+      e. we use render() to render the UI (JSX)
+      f. it's more complex and more verbose then functional component
+  2. functional component
+    a. WE use javascript regular and arrow function ut we don't need to inherit any property.
+    b. It is stateless because it does not have state management.
+    c. It uses hooks to manage lifecycle and state management
+      useState ==> it's for state management
+      useReducer ===> it's also manage the state
+      useEffect ===> it manages the lifecycle
+    d. it returns UI(JSX) as we return something in normal javascript function.
+    e. it's very easy to use and learn, it's very light weight then the class component
+    f. React provides lots of hooks that makes to easy to work in react.
+
+
+
+
+# todo list (Project)
+
+1. requirement
+2. clarifications
+3. tech stack
+functional component, state manage, useEffect
+
+# controlled component and uncontrolled component
+# fragement
+
+
+
 
 
 
