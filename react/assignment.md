@@ -15,5 +15,8 @@ npm install -d style-loader
 
 # what use of preventDefault
 
+# StrictMode in reactjs/javascript
+# reportWebVitals in reactjs
+
 
 

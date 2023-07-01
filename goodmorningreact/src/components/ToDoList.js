@@ -37,7 +37,7 @@ const ToDoList = () => {
         setCurretIndex(indexId)
     }
     const deleteHandler = (event, indexId) => {
-        event.preventDefault()
+        
         const remainingItemList = itemList.filter((_, i) => i !== indexId)
         setItemList([...remainingItemList])
     }

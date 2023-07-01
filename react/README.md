@@ -239,7 +239,20 @@ Type of component
 functional component, state manage, useEffect
 
 # controlled component and uncontrolled component
-# fragement
+# Fragement & key
+# Routing/React Router DOM
+  1. install react router dom
+          npm i react-router-dom
+  2. import react-router-dom on main page
+      a. createBrowserRouter
+      b. RouterProvider
+      c. Link
+      d. useParams
+      f. useNavigate
+
+      
+       
+
 
 
 
