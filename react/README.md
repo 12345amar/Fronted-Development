@@ -239,7 +239,23 @@ Type of component
 functional component, state manage, useEffect
 
 # controlled component and uncontrolled component
-# Fragement & key
+  1. When we manage form and input fields by state/useState, it's called controlled component.
+
+  2. When we can not manage form and input fields by state/useState and we use ref,normal form or other way (Formik library), it's called uncontrolled component.
+
+# Fragement
+  when we use multiple html/jsx layout in single component then we must use fragement. there are three type of fragement in react.
+    1. <div></div> I(Avoid)
+    2. React.Fragement (use when we need to pass key)
+    3. <></> (common use)
+
+    Note: it maintains react performance.
+
+# key ==>
+   we must use unique key when we use map to iteration to itrate UI like <li></li> or other html/jsx dom.
+   If we don't use key using map then react gives warning.
+   it maintains also react performance.
+
 # Routing/React Router DOM
   1. install react router dom
           npm i react-router-dom
@@ -249,6 +265,15 @@ functional component, state manage, useEffect
       c. Link
       d. useParams
       f. useNavigate
+        when we redirect one page to other, we use useNavigate in v6>
+        but in older version we use useHistory.
+      g. useLocation
+
+# State Lifting / Lifting State up
+
+    
+
+
 
       
        

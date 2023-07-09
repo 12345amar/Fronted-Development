@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ToDoItemList from './ToDoItemList'
+import Header from './Header';
 
 const ToDoList = () => {
     const [item, setItem] = useState('')
@@ -44,6 +46,7 @@ const ToDoList = () => {
     console.log("itemList", itemList)
     return (
         <div>
+           <Header />
             <div className="todo-container">
                 <div className="todo-add-section">
                     <div className="todo-add-input">
@@ -60,16 +63,7 @@ const ToDoList = () => {
                 <div><b>Action</b></div>
             </div>
 
-            {itemList && itemList.length > 0 && itemList.map((x, i) => {
-                return  <div className="todo-list">
-                <div>{i + 1}</div>
-                <div>{x.value}</div>
-                <div>
-                    <button type="button" onClick={(event) => {editHandler(event, i)}}>Edit</button>
-                    <button type="button" onClick={(event) => {deleteHandler(event, i)}}>Delete</button>
-                </div>
-            </div>
-            })}
+          <ToDoItemList itemList={itemList} editHandler={editHandler} deleteHandler={deleteHandler} />
         </div>
     )
 

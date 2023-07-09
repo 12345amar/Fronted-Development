@@ -16,7 +16,10 @@ npm install -d style-loader
 # what use of preventDefault
 
 # StrictMode in reactjs/javascript
+
 # reportWebVitals in reactjs
+
+# what is fragement in react, can we use multiple fragement in single component?
 
 
 
