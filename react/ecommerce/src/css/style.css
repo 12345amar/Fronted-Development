@@ -1,0 +1,16 @@
+.registration-form {
+    display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+    
+}
+.registration-form div {
+    display: flex;
+    gap: 10px;
+
+}
+.registration-form input {
+    width: 50%;
+}

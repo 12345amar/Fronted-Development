@@ -6,6 +6,7 @@ import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import Portfolio from './pages/Portfolio';
 import ErrorPage from './pages/ErrorPage';
+import Layout from './pages/Layout';
 import Header from './components/Header';
 
 
@@ -14,25 +15,32 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Home />,
-      errorElement: <ErrorPage />
+      element: <Layout />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: '/',
+          element: <Home />
+        },
+        {
+          path: '/about/:id',
+          element: <AboutUs />
+        },
+        {
+          path: '/contact',
+          element: <ContactUs />
+        },
+         {
+          path: '/portfolio',
+          element: <Portfolio />
+        },
+         {
+          path: '/todo',
+          element: <ToDoList />
+        }
+      ]
     },
-    {
-      path: '/about/:id',
-      element: <AboutUs />
-    },
-    {
-      path: '/contact',
-      element: <ContactUs />
-    },
-     {
-      path: '/portfolio',
-      element: <Portfolio />
-    },
-     {
-      path: '/todo',
-      element: <ToDoList />
-    }
+    
   ])
 
   return (

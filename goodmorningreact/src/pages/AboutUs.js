@@ -6,11 +6,11 @@ function AboutUs() {
   const myParams = useParams()
   const myInfo = useLocation()
   console.log("myParams", myInfo)
-  const { name, city, age, state, country } = myInfo.state
+
 
   return (
-    <><Header /><div>ABout Us</div>
-    <p>Name: {name}</p>
+    <><div>ABout Us</div>
+  
     </>
   )
 }

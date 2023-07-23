@@ -46,7 +46,7 @@ const ToDoList = () => {
     console.log("itemList", itemList)
     return (
         <div>
-           <Header />
+           
             <div className="todo-container">
                 <div className="todo-add-section">
                     <div className="todo-add-input">

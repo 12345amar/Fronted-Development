@@ -269,7 +269,99 @@ functional component, state manage, useEffect
         but in older version we use useHistory.
       g. useLocation
 
-# State Lifting / Lifting State up
+# Lifting State up / State Lifting
+We can send data from child to parent component to use lifiting state up in react.
+  1. useing useState()
+  2. using function
+
+# Hooks
+  Hooks is a function which inject in react without sideeffects. React introduced hooks in 16.8 version. we can use state management and lifecycle and other react feature with writing class component.
+# Rules of hooks ==>
+  1. We have to import all hooks on top of file in react.
+  2. hook must be used use prefix in hooks name.
+
+inbuilt hooks in reacts:
+
+1. useState ==> state management
+2. useReducer ==> it is also for state management as similer to useState but it uses for multiple condition and complex data management.
+
+3. useEffect ===> maintain life cycle, it has asynchromous
+4. useLayoutEffect ==> maintain life cycle but it has synchronous behaviour
+
+ 
+5. useMemo & useCallback => useMemo and useCallback use for memoise expnesive caculation which save re-rendering. useMemo returns value and useCallback return function. it use for maintion performance of application.
+
+
+6. useRef ==> We can manipulate dom in react using useRef
+7. useContext
+
+Project - Ecommerce
+features===>
+login
+registration
+forgot password
+user profile
+product list
+filters
+search
+cart
+product order
+payment gateway(by pass)
+shipping address
+order tracking
+transaction
+invoice
+
+APIs list
+https://fakestoreapi.com/docs
+https://fakeapi.platzi.com/en/rest/files
+other api http://sahosoftweb.com/swagger/index.html
+
+
+tech stack
+react
+hooks
+context api
+
+UI
+Bootsrap
+
+setup boostrap
+registrtion, login, logout 
+context api, session, useReducer, multiple environment, api itnergation
+
+
+form
+contextAPI
+run api ==> api structure
+setup session
+
+data flow
+1. props
+2. contextAPI/ useContext 
+3. redux/ redux toolkit/mobix
+
+create context
+provider
+consumer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 

@@ -3,7 +3,7 @@ import Header from '../components/Header'
 
 function Portfolio() {
   return (
-    <><Header /><div>Portfolio</div></>
+    <><div>Portfolio</div></>
   )
 }
 
