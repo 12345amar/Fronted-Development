@@ -339,11 +339,21 @@ setup session
 data flow
 1. props
 2. contextAPI/ useContext 
-3. redux/ redux toolkit/mobix
+3. redux/ redux toolkit/mobx
 
 create context
 provider
 consumer
+
+
+registration
+form
+multiple values (name, passpword, address, email)
+after submit form we consuming context api for registration
+
+1. direct login after registration
+2. after registration we can reidrect on login
+
 
 
 

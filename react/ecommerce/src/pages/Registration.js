@@ -1,21 +1,30 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import UserContext from './../context/UserContext'
 import { USER_ACTION } from '../utils/Constants';
 
 
 const Registration = () => {
   const { userState, userDispatch } = useContext(UserContext)
+
   console.log("userState", userState)
+
+  useEffect(() => {
+    if(userState.isRegistration) {
+      console.log("login")
+      window.location = 'login'
+      // redirect login
+    }
+  }, [userState])
   const initialFormData = {
-    email: 'John@gmail.com',
-    username: 'johnd',
-    password: 'm38rmF$',
+    email: '',
+    username: '',
+    password: '',
     name: {
-      firstname: 'John',
-      lastname: 'Doe',
+      firstname: '',
+      lastname: '',
     },
     address: {
-      city: 'kilcoole',
+      city: '',
       street: '7835 new road',
       number: 3,
       zipcode: '12926-3874',
@@ -72,7 +81,7 @@ const Registration = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here, you can handle the form submission, e.g., send the formData to a backend server for registration.
-    console.log('Form Data:', formData);
+    
     userDispatch({action: USER_ACTION.USER_REGISTRATION, data: formData })
     // handleRegister(formData)
   };
