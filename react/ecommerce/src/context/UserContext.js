@@ -22,17 +22,16 @@ export const UserProvider = ({children}) => {
     }
 
     const userReducer = (prevState, payload) => {
-        
          switch (payload.action) {
             case USER_ACTION.USER_REGISTRATION:
                 if (payload.data) {
-                    const response = callUserAPI(payload.data)
-                    if (response) {
+                    const response = callUserAPI(payload)
+                    if (!response.error) {
                         return { ...prevState, isRegistration: true }
                     } else {
                         const myError =  {
                             action: USER_ACTION.USER_REGISTRATION,
-                            error: 'Something went to wrong',
+                            error: response.error,
                             payload: response
                         }
                         return { ...prevState, isError: myError }
@@ -43,6 +42,17 @@ export const UserProvider = ({children}) => {
                 // registration functionality
            
             case USER_ACTION.USER_LOGIN:
+                const response = callUserAPI(payload.data)
+                if (response) {
+                    return { ...prevState, isRegistration: true }
+                } else {
+                    const myError =  {
+                        action: USER_ACTION.USER_REGISTRATION,
+                        error: 'Something went to wrong',
+                        payload: response
+                    }
+                    return { ...prevState, isError: myError }
+                }
             break;
             case USER_ACTION.FETCH_USER_DETAILS:
             break;
@@ -58,7 +68,7 @@ export const UserProvider = ({children}) => {
    
 return(
  
-    <UserContext.Provider value={{userState, userDispatch}}>
+    <UserContext.Provider value={[userState, userDispatch]}>
         {children}
     </UserContext.Provider>
     )

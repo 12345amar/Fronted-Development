@@ -29,18 +29,19 @@ function App() {
         {
           path: 'contact',
           element: <ContactUs />
+        },
+        {
+          path: 'login',
+          element: <Login />
+        },
+        {
+          path: 'registration',
+          element: <Registration />
         }
        
       ]
-    },
-    {
-      path: 'login',
-      element: <Login />
-    },
-    {
-      path: 'registration',
-      element: <Registration />
     }
+   
   ])
   return (
     <Context>
